@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Amiko|Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <title>{% block title %}Polls Application{% endblock %}</title>
+</head>
+<body>
+    <header id="header">
+        <div id="logo">
+            <a href="{% url 'polls:index' %}">POLLS<span class="red">.</span></a>  
+        </div>
+    </header>
+    <div id="main-content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

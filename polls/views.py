@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.db.models import F
 from .models import Question, Choice
@@ -13,10 +13,7 @@ from .models import Question, Choice
 #---------------------------------------------------------------------
 def index(request):
     question_list = Question.objects.order_by('-pub_date')
-    context = {
-        'question_list': question_list,
-    }
-    return render(request, 'polls/index.html', context)
+    return render(request, 'polls/index.html', {'question_list': question_list})
 
 
 #---------------------------------------------------------------------
